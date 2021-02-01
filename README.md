@@ -21,7 +21,7 @@ Things you may want to cover:
 5. rails db:migrate
 6. rails s
 7. プレビュー > プレビューラニングアプリケーション
-8. URLの `/` 以下を `/trees.json` に修正して、ボタン押しても動かないので、
+8. URLの `/` 以下を `/trees` に修正して、ボタン押しても動かないので、
 8. app/views/trees/index.html.erbファイルの９行目、「http://localhost:3000/trees.json」を「プレビューしてる現在のURLに修正」 最後に `.json` を忘れずに
 9. だめなら松元に連絡
 
@@ -127,7 +127,7 @@ end
 </script>
 ```
 
-### app/views/layout/application.html.erb head内に追記　for　（ｊQueryで描画するため、ｊQueryをインストール）
+### app/views/layout/application.html.erb head内に追記　for　（jQueryで描画するため、jQueryをインストール）
 ```
 <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -136,3 +136,7 @@ end
 </script>
 
 ```
+
+## 課題
+1. 描画で親とのつながりをどうするか？　それぞれのデータは「father_id」というのはもっている。　jQueryでやるには限界があって、Vue.jsなどのコンポーネント志向のフレームワークを使用したり、ライブラリを使用する？
+2. 配偶者の扱い？
