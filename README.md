@@ -9,6 +9,9 @@ Things you may want to cover:
   - rails5.2.2
   - ruby2.5.3
   
+## 最終的にこういう風になればOK
+![alt](001.png)
+  
 ## Rubyのバージョンが違う場合（たぶん、これで大丈夫なはず）
 1. Gemfileのバージョン修正
 2. .ruby-versionのバージョン修正
