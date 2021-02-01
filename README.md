@@ -87,7 +87,7 @@ json.array! @trees do |tree|
 end
 ```
 
-### app/views/trees/index.html.erb 雑に実装　for　（雑に、サーバからJSONを受け取り、超強引にQueryで描画している）
+### app/views/trees/index.html.erb 雑に実装　for　（サーバからJSONを受け取り、超強引にjQueryで描画している）
 ```
 <body>
 <input type="button" value="家系図取得" , id="btn">
