@@ -21,8 +21,8 @@ Things you may want to cover:
 5. rails db:migrate
 6. rails s
 7. プレビュー > プレビューラニングアプリケーション
-8. URLの `/` 以下を `/trees` に修正して、ボタン押しても動かないので、
-8. app/views/trees/index.html.erbファイルの９行目、「http://localhost:3000/trees」を「プレビューしてる現在のURLに修正」
+8. URLの `/` 以下を `/trees.json` に修正して、ボタン押しても動かないので、
+8. app/views/trees/index.html.erbファイルの９行目、「http://localhost:3000/trees.json」を「プレビューしてる現在のURLに修正」 最後に `.json` を忘れずに
 9. だめなら松元に連絡
 
 
