@@ -10,7 +10,12 @@ Things you may want to cover:
   - ruby2.5.3
 
 ## このアプリの展開手順
-1. git
+1. git clone https://github.com/matsumoto-taichi/family_tree_javascript.git
+2. bundle install
+3. rails db:create
+4. rails db:migrate
+5. rails s
+6. http://localhost:3000/trees にアクセス
 
 
 ### このアプリの作成手順
