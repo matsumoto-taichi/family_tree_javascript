@@ -9,20 +9,13 @@ Things you may want to cover:
   - rails5.2.2
   - ruby2.5.3
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-  - rails db:create
-
-* Database initialization
-  - rails db:migrate
+## このアプリの展開手順
+1. git
 
 
 ### このアプリの作成手順
 
-### Scaffoldでアプリ作成
+### Scaffoldでアプリ作成　for　（アプリ新規作成）
 ```
 rails _5.2.2_ new family_tree --database=mysql --skip-bundle --skip-test
 rails g scaffold FamilyTree depth:integer father_id:integer name:string gender:integer
@@ -30,7 +23,7 @@ rails db:create
 rails db:migrate
 ```
 
-### テストデータ用意
+### テストデータ用意　for　（テストデータ作成）
 *db/seeds.rb*
 ```
 Tree.create(id: 0, depth: 0, father_id: 0, name:"山本太郎", gender: 1)
@@ -54,7 +47,7 @@ irb(main):001:0> Tree.find(0)
 $ mv app/views/trees/index.html.erb app/views/trees/index.html.erb.backup
 ```
 
-### app/controllers/trees_controller.rb に追記
+### app/controllers/trees_controller.rb に追記　for　（JavaScriptでJSONを取得するためのサーバ側の受け口作成）
 ```
 # GET /trees or /trees.json
 def get_trees
@@ -63,13 +56,13 @@ def get_trees
 end
 ```
 
-### config/routes.rb　にルーティング追記
+### config/routes.rb　にルーティング追記　for　（上で作成した、サーバへURLを定義）
 ```
 get "/get_trees" => "trees#get_tree"
 
 ```
 
-### app/views/trees/index.json.jbuilder 実装
+### app/views/trees/index.json.jbuilder 実装　for　（サーバから受け取るJSONを良い感じに修正してフロントに渡すため）
 ```
 json.array! @trees do |tree|
   json.depth tree.depth
@@ -78,7 +71,7 @@ json.array! @trees do |tree|
 end
 ```
 
-### app/views/trees/index.html.erb 雑に実装
+### app/views/trees/index.html.erb 雑に実装　for　（雑に、サーバからJSONを受け取り、超強引にｊQueryで描画している）
 ```
 <body>
 <input type="button" value="家系図取得" , id="btn">
@@ -121,12 +114,12 @@ end
 </script>
 ```
 
-### app/views/layout/application.html.erb head内に追記
+### app/views/layout/application.html.erb head内に追記　for　（ｊQueryで描画するため、ｊQueryをインストール）
 ```
 <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous">
-    </script>
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous">
+</script>
 
 ```
