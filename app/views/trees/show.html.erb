@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Depth:</strong>
+  <%= @tree.depth %>
+</p>
+
+<p>
+  <strong>Father:</strong>
+  <%= @tree.father_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tree.name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @tree.gender %>
+</p>
+
+<%= link_to 'Edit', edit_tree_path(@tree) %> |
+<%= link_to 'Back', trees_path %>

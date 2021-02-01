@@ -1,0 +1,39 @@
+<body>
+<input type="button" value="家系図取得" , id="btn">
+<h2>家系図を表示</h2>
+<hr>
+<div id="content"></div>
+</body>
+<script>
+    $("#btn").on('click', function () {
+        let url = 'http://localhost:3000/trees.json';
+        $.getJSON(url, function (data) {
+
+            //第0世代取得
+            let data0 = data.filter(e => e['depth'] == 0);
+            //第1世代取得
+            let data1 = data.filter(e => e['depth'] == 1);
+            //第2世代取得
+            let data2 = data.filter(e => e['depth'] == 2);
+
+            //第0世代表示
+            $("#content").html("<p>" + data0[0]['name'] + "</p>");
+            //改行追記
+            $("#content").append("<br>");
+
+            //第1世代表示
+            $("#content").append("<p>");
+            data1.map(e => $("#content").append(e['name'] + '　'));
+            $("#content").append("</p>");
+            //改行追記
+            $("#content").append("<br>");
+
+            //第2世代表示
+            $("#content").append("<p>");
+            data2.map(e => $("#content").append(e['name'] + '　'));
+            $("#content").append("</p>");
+            //改行追記
+            $("#content").append("<br>");
+        })
+    });
+</script>
