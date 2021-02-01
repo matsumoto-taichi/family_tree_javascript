@@ -8,17 +8,25 @@ Things you may want to cover:
 * Ruby version
   - rails5.2.2
   - ruby2.5.3
+  
+## Rubyのバージョンが違う場合（たぶん、これで大丈夫なはず）
+1. Gemfileのバージョン修正
+2. .ruby-versionのバージョン修正
 
 ## このアプリの展開手順
 1. git clone https://github.com/matsumoto-taichi/family_tree_javascript.git
-2. bundle install
-3. rails db:create
-4. rails db:migrate
-5. rails s
-6. http://localhost:3000/trees にアクセス
+2. cd family_tree_javascript
+3. bundle install
+4. rails db:create
+5. rails db:migrate
+6. rails s
+7. プレビュー > プレビューラニングアプリケーション
+8. URLの `/` 以下を `/trees` に修正して、ボタン押しても動かないので、
+8. app/views/trees/index.html.erbファイルの９行目、「http://localhost:3000/trees」を「プレビューしてる現在のURLに修正」
+9. だめなら松元に連絡
 
 
-### このアプリの作成手順
+## このアプリの作成手順
 
 ### Scaffoldでアプリ作成　for　（アプリ新規作成）
 ```
